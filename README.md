@@ -19,9 +19,4 @@ EX: code_220316xfz.ipynb
 
 强调：安装并使用typora
 
-<<<<<<< HEAD
 注意：新建多个文件夹及文件上传时需onebyone
-=======
-注意：新建多个文件夹及文件上传时需onebyone
-
->>>>>>> e677532b6175fadec913697ed486d5c58db85dba
