@@ -4,6 +4,7 @@ comp3070_Reality——Game interface: An intellgent  generating and interactable
 # 编辑要求：上传任何文件，须将单次上传内容的最上层文件夹命名为：*_yymmddname.*
 EX: code_220316xfz.ipynb
 
+文件目录框架除外
 
 
 # 更新日志
