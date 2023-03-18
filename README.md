@@ -3,3 +3,18 @@ comp3070_Reality——Game interface: An intellgent  generating and interactable
 
 # 编辑要求：上传任何文件，需将上传内容的最上层文件夹命名为：*_name.*
 EX: code_xfz.ipynb
+
+
+
+# 更新日志
+
+更新日志格式：yymmdd_xxx：content
+
+230318_xfz：上传SRS并更新了1.*简介及2.1性能需求。
+
+
+
+# 开发日志
+
+强调：安装并使用typora
+
