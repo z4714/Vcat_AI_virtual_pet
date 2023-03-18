@@ -1,9 +1,0 @@
-提供：
-1. typora：Markdown笔记
-2. jupterlab：多功能python IDE
-3. DevC++：快速c/c++编程
-4. sublime：多编程语言支持
-官网下载：
-1. anaconda
-2. vscode + vs
-3. eclipse
