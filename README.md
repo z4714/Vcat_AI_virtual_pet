@@ -17,4 +17,5 @@ EX: code_xfz.ipynb
 # 开发日志
 
 强调：安装并使用typora
+注意：新建多个文件夹及文件上传时需onebyone
 
