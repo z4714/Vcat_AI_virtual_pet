@@ -26,7 +26,7 @@ sudo do-release-upgrade
 
 中途全选管理员版本
 
-![image-20230319171119846](云服务器配置笔记_230320xfz.assets\image-20230319171119846.png)
+![image-20230319171119846](云服务器配置笔记.assets\image-20230319171119846.png)
 
 [一些个可视化安装](https://blog.csdn.net/weixin_44262492/article/details/128365248)
 
@@ -45,11 +45,11 @@ sudo apt-get update
 sudo apt-get install apache2
 ```
 
-![image-20230320155450668](云服务器配置笔记_230320xfz.assets/image-20230320155450668.png)
+![image-20230320155450668](云服务器配置笔记.assets/image-20230320155450668.png)
 
 安全组修改端口访问权限：
 
-![image-20230320160109425](云服务器配置笔记_230320xfz.assets/image-20230320160109425.png)
+![image-20230320160109425](云服务器配置笔记.assets/image-20230320160109425.png)
 
 启动Apache2：
 
@@ -86,7 +86,7 @@ cd ..
 
 Nginx可能会和apache抢80端口
 
-![image-20230320163624706](云服务器配置笔记_230320xfz.assets/image-20230320163624706.png)
+![image-20230320163624706](云服务器配置笔记.assets/image-20230320163624706.png)
 
 修改默认端口：
 
@@ -94,11 +94,11 @@ https://cloud.tencent.com/developer/article/2134157
 
 https://blog.csdn.net/m0_67401545/article/details/126077253
 
-![image-20230320164258535](云服务器配置笔记_230320xfz.assets/image-20230320164258535.png)
+![image-20230320164258535](云服务器配置笔记.assets/image-20230320164258535.png)
 
 记得把几个config的都改了：
 
-![image-20230320180831725](云服务器配置笔记_230320xfz.assets/image-20230320180831725-1679307403069.png)
+![image-20230320180831725](云服务器配置笔记.assets/image-20230320180831725-1679307403069.png)
 
 设置安全组、防火墙开放端口：
 
@@ -114,7 +114,7 @@ https://blog.csdn.net/m0_67401545/article/details/126077253
 
 
 
-![image-20230304003028456](云服务器配置笔记_230320xfz.assets\image-20230304003028456.png)
+![image-20230304003028456](云服务器配置笔记.assets\image-20230304003028456.png)
 
 and
 
@@ -130,9 +130,9 @@ sudo npm install -g n
 sudo n stable
 ```
 
-![image-20230304010126405](云服务器配置笔记_230320xfz.assets\image-20230304010126405.png)
+![image-20230304010126405](云服务器配置笔记.assets\image-20230304010126405.png)
 
-![image-20230320105602664](云服务器配置笔记_230320xfz.assets/image-20230320105602664.png)
+![image-20230320105602664](云服务器配置笔记.assets/image-20230320105602664.png)
 
 
 
@@ -144,11 +144,11 @@ https://blog.csdn.net/m0_37201243/article/details/123641552?utm_medium=distribut
 
 https://blog.csdn.net/qq_50247813/article/details/128870673
 
-![image-20230305202359491](云服务器配置笔记_230320xfz.assets\image-20230305202359491.png)
+![image-20230305202359491](云服务器配置笔记.assets\image-20230305202359491.png)
 
-![image-20230305202441682](云服务器配置笔记_230320xfz.assets\image-20230305202441682.png)
+![image-20230305202441682](云服务器配置笔记.assets\image-20230305202441682.png)
 
-![image-20230305202346935](云服务器配置笔记_230320xfz.assets\image-20230305202346935.png)
+![image-20230305202346935](云服务器配置笔记.assets\image-20230305202346935.png)
 
 ##### make 版本问题
 
@@ -172,11 +172,11 @@ https://blog.csdn.net/weixin_42638388/article/details/121678015
 
 https://blog.csdn.net/xueyumicheng/article/details/127728414
 
-![image-20230305213716009](云服务器配置笔记_230320xfz.assets\image-20230305213716009.png)
+![image-20230305213716009](云服务器配置笔记.assets\image-20230305213716009.png)
 
 ../configure权限：
 
-![image-20230305213610312](云服务器配置笔记_230320xfz.assets\image-20230305213610312.png)
+![image-20230305213610312](云服务器配置笔记.assets\image-20230305213610312.png)
 
 make install 报错解决：
 
@@ -192,23 +192,23 @@ Linux 64-bit
 
 上传（root）
 
-![image-20230303235409471](云服务器配置笔记_230320xfz.assets\image-20230303235409471.png)
+![image-20230303235409471](云服务器配置笔记.assets\image-20230303235409471.png)
 
-![image-20230304001320911](云服务器配置笔记_230320xfz.assets\image-20230304001320911.png)
+![image-20230304001320911](云服务器配置笔记.assets\image-20230304001320911.png)
 
-![image-20230304001422066](云服务器配置笔记_230320xfz.assets\image-20230304001422066.png)
+![image-20230304001422066](云服务器配置笔记.assets\image-20230304001422066.png)
 
 配置环境变量
 
-![image-20230304002224164](云服务器配置笔记_230320xfz.assets\image-20230304002224164.png)
+![image-20230304002224164](云服务器配置笔记.assets\image-20230304002224164.png)
 
 profile记得改权限chmod
 
-![image-20230304002740472](云服务器配置笔记_230320xfz.assets\image-20230304002740472.png)
+![image-20230304002740472](云服务器配置笔记.assets\image-20230304002740472.png)
 
 测试：
 
-![image-20230304003957436](云服务器配置笔记_230320xfz.assets\image-20230304003957436.png)
+![image-20230304003957436](云服务器配置笔记.assets\image-20230304003957436.png)
 
 
 
@@ -218,7 +218,7 @@ profile记得改权限chmod
 
 #### Create React App
 
-![image-20230320113930310](云服务器配置笔记_230320xfz.assets/image-20230320113930310.png)
+![image-20230320113930310](云服务器配置笔记.assets/image-20230320113930310.png)
 
 [服务器配置]([React项目部署在阿里云服务器ECS - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/107285294))
 
@@ -230,9 +230,9 @@ su - comp3070
 
 vim ~/.zshrc, 或者登录后直接vim .zshrc更好
 
-![image-20230224162314104](云服务器配置笔记_230320xfz.assets\image-20230224162314104.png)
+![image-20230224162314104](云服务器配置笔记.assets\image-20230224162314104.png)
 
-![image-20230224163029000](云服务器配置笔记_230320xfz.assets\image-20230224163029000.png)
+![image-20230224163029000](云服务器配置笔记.assets\image-20230224163029000.png)
 
 `注意：本文档没有任何问题，请仔细阅读文档，按步骤完成，不要轻易质疑文档的正确性；遇到问题，请大家先仔细阅读屏幕输出，不要直接提问`
 
@@ -853,7 +853,7 @@ source ~/.oh-my-zsh/plugins/incr/incr*.zsh
 alias test='ssh xfz'
 ```
 
-![image-20230320103051039](D:\Disk_D\LearningTree\Project\COMP3070\git\GitHub\开发文档\云服务器配置笔记_230320xfz.assets\image-20230320103051039.png)
+![image-20230320103051039](云服务器配置笔记.assets\image-20230320103051039.png)
 
 ```bash
 source .zshrc
