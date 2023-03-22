@@ -1,5 +1,7 @@
 # 云服务器配置笔记
 
+建议写个AI来管理服务器qwq，太麻烦了
+
 ## 项目环境
 
 ### 系统配置
@@ -24,7 +26,7 @@ sudo do-release-upgrade
 
 中途全选管理员版本
 
-![image-20230319171119846](D:\Disk_D\LearningTree\Project\COMP3070\git\GitHub\开发文档\云服务器配置笔记_230319xfz.assets\image-20230319171119846.png)
+![image-20230319171119846](云服务器配置笔记.assets\image-20230319171119846.png)
 
 [一些个可视化安装](https://blog.csdn.net/weixin_44262492/article/details/128365248)
 
@@ -34,13 +36,85 @@ sudo do-release-upgrade
 
 comp3070
 
-## React环境
+### Web配置：
 
-### Nodejs
+#### Apache2
 
-#### 安全高效可靠的办法：
+```bash
+sudo apt-get update
+sudo apt-get install apache2
+```
 
-![image-20230304003028456](D:\Disk_D\LearningTree\Project\COMP3070\云服务器配置笔记.assets\image-20230304003028456.png)
+![image-20230320155450668](云服务器配置笔记.assets/image-20230320155450668.png)
+
+安全组修改端口访问权限：
+
+![image-20230320160109425](云服务器配置笔记.assets/image-20230320160109425.png)
+
+启动Apache2：
+
+```bash
+sudo systemctl status apache2 # 测试运行状态
+sudo service apache2 start # 正式启动Apache2
+```
+
+#### Nginx
+
+
+
+[Nginx]([Nginx详解（一文带你搞懂Nginx）_会飞的猫不吃鱼的博客-CSDN博客](https://blog.csdn.net/hyfsbxg/article/details/122322125))是一款轻量级的HTTP/反向代理web服务器及电子邮件（IMAP/POP3）代理服务器
+
+[参考](https://blog.csdn.net/dong_ly/article/details/99686722)
+
+```bash
+cd /usr/local/
+mkdir nginx
+cd nginx
+
+wget https://nginx.org/download/nginx-1.22.1.tar.gz
+tar -xzvf nginx-1.22.1.tar.gz
+cd nginx-1.16.1
+apt-get install libpcre3 libpcre3-dev
+apt-get install zlib1g-dev
+apt-get install openssl libssl-dev
+./configure --prefix=/usr/local/nginx
+make
+make install
+cd ..
+./sbin/nginx
+```
+
+Nginx可能会和apache抢80端口
+
+![image-20230320163624706](云服务器配置笔记.assets/image-20230320163624706.png)
+
+修改默认端口：
+
+https://cloud.tencent.com/developer/article/2134157
+
+https://blog.csdn.net/m0_67401545/article/details/126077253
+
+![image-20230320164258535](云服务器配置笔记.assets/image-20230320164258535.png)
+
+记得把几个config的都改了：
+
+![image-20230320180831725](云服务器配置笔记.assets/image-20230320180831725-1679307403069.png)
+
+设置安全组、防火墙开放端口：
+
+![image-20230320170244888](云服务器配置笔记_230320xfz.assets/image-20230320170244888.png)
+
+记得开放22端口！不然会导致workbench连接失败。
+
+### React环境
+
+#### Nodejs
+
+##### 快速有效的方案
+
+
+
+![image-20230304003028456](云服务器配置笔记.assets\image-20230304003028456.png)
 
 and
 
@@ -56,7 +130,13 @@ sudo npm install -g n
 sudo n stable
 ```
 
-![image-20230304010126405](D:\Disk_D\LearningTree\Project\COMP3070\云服务器配置笔记.assets\image-20230304010126405.png)
+![image-20230304010126405](云服务器配置笔记.assets\image-20230304010126405.png)
+
+![image-20230320105602664](云服务器配置笔记.assets/image-20230320105602664.png)
+
+
+
+#### 乱七八糟终归是在gcc阶段把服务器搞崩了的办法：
 
 ##### glibc 版本问题：
 
@@ -64,11 +144,11 @@ https://blog.csdn.net/m0_37201243/article/details/123641552?utm_medium=distribut
 
 https://blog.csdn.net/qq_50247813/article/details/128870673
 
-![image-20230305202359491](D:\Disk_D\LearningTree\Project\COMP3070\云服务器配置笔记.assets\image-20230305202359491.png)
+![image-20230305202359491](云服务器配置笔记.assets\image-20230305202359491.png)
 
-![image-20230305202441682](D:\Disk_D\LearningTree\Project\COMP3070\云服务器配置笔记.assets\image-20230305202441682.png)
+![image-20230305202441682](云服务器配置笔记.assets\image-20230305202441682.png)
 
-![image-20230305202346935](D:\Disk_D\LearningTree\Project\COMP3070\云服务器配置笔记.assets\image-20230305202346935.png)
+![image-20230305202346935](云服务器配置笔记.assets\image-20230305202346935.png)
 
 ##### make 版本问题
 
@@ -92,11 +172,11 @@ https://blog.csdn.net/weixin_42638388/article/details/121678015
 
 https://blog.csdn.net/xueyumicheng/article/details/127728414
 
-![image-20230305213716009](D:\Disk_D\LearningTree\Project\COMP3070\云服务器配置笔记.assets\image-20230305213716009.png)
+![image-20230305213716009](云服务器配置笔记.assets\image-20230305213716009.png)
 
 ../configure权限：
 
-![image-20230305213610312](D:\Disk_D\LearningTree\Project\COMP3070\云服务器配置笔记.assets\image-20230305213610312.png)
+![image-20230305213610312](云服务器配置笔记.assets\image-20230305213610312.png)
 
 make install 报错解决：
 
@@ -112,25 +192,35 @@ Linux 64-bit
 
 上传（root）
 
-![image-20230303235409471](D:\Disk_D\LearningTree\Project\COMP3070\云服务器配置笔记.assets\image-20230303235409471.png)
+![image-20230303235409471](云服务器配置笔记.assets\image-20230303235409471.png)
 
-![image-20230304001320911](D:\Disk_D\LearningTree\Project\COMP3070\云服务器配置笔记.assets\image-20230304001320911.png)
+![image-20230304001320911](云服务器配置笔记.assets\image-20230304001320911.png)
 
-![image-20230304001422066](D:\Disk_D\LearningTree\Project\COMP3070\云服务器配置笔记.assets\image-20230304001422066.png)
+![image-20230304001422066](云服务器配置笔记.assets\image-20230304001422066.png)
 
 配置环境变量
 
-![image-20230304002224164](D:\Disk_D\LearningTree\Project\COMP3070\云服务器配置笔记.assets\image-20230304002224164.png)
+![image-20230304002224164](云服务器配置笔记.assets\image-20230304002224164.png)
 
 profile记得改权限chmod
 
-![image-20230304002740472](D:\Disk_D\LearningTree\Project\COMP3070\云服务器配置笔记.assets\image-20230304002740472.png)
+![image-20230304002740472](云服务器配置笔记.assets\image-20230304002740472.png)
 
 测试：
 
-![image-20230304003957436](D:\Disk_D\LearningTree\Project\COMP3070\云服务器配置笔记.assets\image-20230304003957436.png)
+![image-20230304003957436](云服务器配置笔记.assets\image-20230304003957436.png)
 
-### Create React App
+
+
+
+
+
+
+#### Create React App
+
+![image-20230320113930310](云服务器配置笔记.assets/image-20230320113930310.png)
+
+[服务器配置]([React项目部署在阿里云服务器ECS - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/107285294))
 
 
 
@@ -140,9 +230,9 @@ su - comp3070
 
 vim ~/.zshrc, 或者登录后直接vim .zshrc更好
 
-![image-20230224162314104](D:\Disk_D\LearningTree\Project\COMP3070\云服务器配置笔记.assets\image-20230224162314104.png)
+![image-20230224162314104](云服务器配置笔记.assets\image-20230224162314104.png)
 
-![image-20230224163029000](D:\Disk_D\LearningTree\Project\COMP3070\云服务器配置笔记.assets\image-20230224163029000.png)
+![image-20230224163029000](云服务器配置笔记.assets\image-20230224163029000.png)
 
 `注意：本文档没有任何问题，请仔细阅读文档，按步骤完成，不要轻易质疑文档的正确性；遇到问题，请大家先仔细阅读屏幕输出，不要直接提问`
 
@@ -372,11 +462,17 @@ vim ~/.zshrc, 或者登录后直接vim .zshrc更好
 
 
 
-###配置Vim（使用新添加的用户操作）
+### 配置Vim（使用新添加的用户操作）
 
 > 在后续的学习过程中，会使用`vim`写程序
 
 [Vim配置推荐 - ma6174](https://github.com/ma6174/vim)（不用打开这个官方网站）
+
+配置出现问题：
+
+![image-20230320101335124](D:\Disk_D\LearningTree\Project\COMP3070\git\GitHub\开发文档\云服务器配置笔记_230319xfz.assets\image-20230320101335124.png)
+
+后续手动补充安装
 
 1. 更新apt源信息
 
@@ -426,6 +522,8 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 ```
 
 5. 使用命令`vim .zshrc`打开.zshrc文件，找到`plugins=()`这一行，将zsh-syntax-highlighting添加进去
+
+   shift+delete
 
 ```bash
 plugins=(git zsh-syntax-highlighting)
@@ -754,3 +852,11 @@ source ~/.oh-my-zsh/plugins/incr/incr*.zsh
 
 alias test='ssh xfz'
 ```
+
+![image-20230320103051039](云服务器配置笔记.assets\image-20230320103051039.png)
+
+```bash
+source .zshrc
+```
+
+zlogin
