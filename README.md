@@ -25,6 +25,8 @@ EX: code_220316xfz.ipynb
 
 230319_xfz：创建history，更新SRS及云服务器配置笔记
 
+230322_hjc: 上传Alpaca语言模型
+
 # 开发日志
 
 强调：安装并使用typora
