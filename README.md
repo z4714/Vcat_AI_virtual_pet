@@ -27,8 +27,6 @@ EX: code_220316xfz.ipynb
 
 230322_hjc: 上传Alpaca语言模型
 
-230323_hjc: 创建深度学习环境配置：Pytorch，CUDA开发环境cudnn Gpu 加速配置
-            创建语言模型部分：首先使用chatGML作为第一语言模型，加载数据集，生成完整模型。
 
 # 开发日志
 
