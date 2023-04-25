@@ -31,6 +31,8 @@ EX: code_220316xfz.ipynb
 
 1. 创建深度学习环境配置：Pytorch，CUDA开发环境cudnn Gpu 加速配置
 2. 创建语言模型部分：首先使用chatGML作为第一语言模型，加载数据集，生成完整模型。
+
+230425_hjc:创建mysql文件夹及其后端模型，采用djongo框架完成建表与模型对应
 # 开发日志
 
 强调：安装并使用typora
