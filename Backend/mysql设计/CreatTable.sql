@@ -1,0 +1,44 @@
+use virtualcat;
+CREATE TABLE User (
+  UserID INT NOT NULL AUTO_INCREMENT,
+  Username VARCHAR(30) NOT NULL,
+  Password VARCHAR(24) NOT NULL,
+  Nickname VARCHAR(30),
+  Email VARCHAR(100),
+  Gender BOOLEAN,
+  Age INT,
+  Image VARCHAR(200),
+  PRIMARY KEY (UserID)
+); 
+CREATE TABLE Pets (
+   PetID INT NOT NULL AUTO_INCREMENT,
+   PetName VARCHAR(24) NOT NULL,
+   PetType INT NOT NULL,
+   Level INT,
+   Exp INT,
+   OwnerID INT,
+   ModeType VARCHAR(50),
+   PRIMARY KEY (PetID),
+   FOREIGN KEY (OwnerID) REFERENCES User(UserID)
+);
+
+CREATE TABLE ChatRecord (
+   RecordID VARCHAR(30) NOT NULL,
+   SenderID INT NOT NULL,
+   ReceiverID INT NOT NULL,
+   Content VARCHAR(100) NOT NULL,
+   SendTime VARCHAR(24) NOT NULL,
+   PRIMARY KEY (RecordID),
+   FOREIGN KEY (SenderID) REFERENCES User(UserID),
+   FOREIGN KEY (ReceiverID) REFERENCES User(UserID)
+);
+
+CREATE TABLE FriendRelationship (
+   FriendshipID INT NOT NULL AUTO_INCREMENT,
+   UserID1 INT NOT NULL,
+   UserID2 INT NOT NULL,
+   CreateTime VARCHAR(24) NOT NULL,
+   PRIMARY KEY (FriendshipID),
+   FOREIGN KEY (UserID1) REFERENCES User(UserID),
+   FOREIGN KEY (UserID2) REFERENCES User(UserID)
+);
