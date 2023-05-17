@@ -6,13 +6,13 @@ React 是一个 JavaScript 库
 
 使用 React 可以将一些简短、独立的代码片段组合成复杂的 UI 界面，这些代码片段被称作“组件”。
 
-## ES6
+# ES6
 
 ECMAScript6
 
 [JS教程](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Language_Overview)
 
-## Create-my-react
+# Create-my-react
 
 Create React App 不会处理后端逻辑或操纵数据库；它只是创建一个前端构建流水线（build pipeline），所以你可以使用它来配合任何你想使用的后端。它在内部使用 [Babel](https://babeljs.io/) 和 [webpack](https://webpack.js.org/)，但你无需了解它们的任何细节。
 
@@ -153,7 +153,7 @@ root.render(<Game />);
 
 ![image-20230320183659452](React.assets/image-20230320183659452.png)
 
-## 组件类
+# 组件类
 
 一个组件接收一些参数：props
 
@@ -203,7 +203,7 @@ ReactDOM.render(
 );
 ```
 
-![image-20230302091206134](D:\Disk_D\LearningTree\Web\WebPage\React\React.assets\image-20230302091206134.png)
+![image-20230302091206134](React.assets\image-20230302091206134.png)
 
 #### JSX作为表达式
 
@@ -435,4 +435,8 @@ class Square extends React.Component{
   }
 }
 ```
+
+# umi框架
+
+
 

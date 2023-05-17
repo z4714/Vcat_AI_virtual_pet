@@ -1,13 +1,9 @@
 # Vcat_AI_virtual_pet
 comp3070_Reality——Game interface: An intellgent  generating and interactable vitural pet 
 
-# 编辑要求：上传任何文件，须将单次上传内容的最上层文件夹命名为：*_yymmddname.*
+# 编辑要求：
 
-EX: code_220316xfz.ipynb
-
-文件目录框架除外
-
-同工作内容文件对应目录下只保留最新版本，历史版本统一放入对应文件夹history目录下
+同工作内容文件对应目录下只保留最新版本，历史版本需要特殊保存的统一放入对应文件夹history目录下
 
 文件较多更新频率较快时，可以采用写summary/description的方式节省时间，例如：
 
@@ -19,9 +15,11 @@ EX: code_220316xfz.ipynb
 
 # 更新日志
 
-更新日志格式：yymmdd_xxx：content
+更新日志格式：yymmdd_xxx：content，只对重要内容的更新进行记录
 
-230318_xfz：上传SRS并更新了1.*简介及2.1性能需求。
+重要内容包括：新的文档、新的工作目录
+
+230318_xfz：上传SRS。
 
 230319_xfz：创建history，更新SRS及云服务器配置笔记
 
@@ -39,5 +37,3 @@ EX: code_220316xfz.ipynb
 # 开发日志
 
 强调：安装并使用typora
-
-注意：新建多个文件夹及文件上传时需onebyone
