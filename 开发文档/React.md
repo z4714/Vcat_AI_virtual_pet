@@ -19,7 +19,7 @@ Create React App 不会处理后端逻辑或操纵数据库；它只是创建一
 当你准备好部署到生产环境时，执行 `npm run build` 会在 `build` 文件夹内生成你应用的优化版本。你能[从它的 README](https://github.com/facebookincubator/create-react-app#create-react-app--) 和[用户指南](https://facebook.github.io/create-react-app/)了解 Create React App 的更多信息。
 
 ```bash
-npx create-react-app my-app
+npx create-react-app my-app --template typescript
 ```
 
 ![image-20230320114722497](React.assets/image-20230320114722497.png)
