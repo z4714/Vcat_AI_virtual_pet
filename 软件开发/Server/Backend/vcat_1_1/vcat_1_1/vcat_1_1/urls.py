@@ -1,8 +1,7 @@
-"""
-URL configuration for VirtualCat project.
+"""vcat_1_1 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.2/topics/http/urls/
+    https://docs.djangoproject.com/en/4.1/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -16,8 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from vcat_1_0 import views
+from vcat_app import views
 
 urlpatterns = [
-    path("index/", views.index),  #访问路由，指定视图函数
+    path('admin/',admin.site.urls),
+    path('index/', views.index, name='index'),  #访问路由，指定视图函数
 ]

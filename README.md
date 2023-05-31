@@ -1,7 +1,11 @@
 # Vcat_AI_virtual_pet
 comp3070_Reality——Game interface: An intellgent  generating and interactable vitural pet 
 
+文件夹ESCServer对应服务器下项目开发内容
+
 # 编辑要求：
+
+
 
 同工作内容文件对应目录下只保留最新版本，历史版本需要特殊保存的统一放入对应文件夹history目录下
 
