@@ -38,15 +38,20 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'rest_framework',
+    'rest_framework_simplejwt',
+    
+    'corsheaders',
     'user',
-    'loign'
+    'login',
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
-    "django.middleware.csrf.CsrfViewMiddleware",
+    #"django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
@@ -75,30 +80,29 @@ WSGI_APPLICATION = "VirtualCat_Web.wsgi.application"
 
 # # Database
 # # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
+'''
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
-
-# DATABASES = {
-#     "default": {
-#        # "ENGINE": "django.db.backends.sqlite3",
-#         #"NAME": BASE_DIR / "db.sqlite3",
-#         'ENGINE': 'django.db.backends.mysql',
-#          'NAME': 'virtualcat',  # 您的数据库名称
-#          'USER': 'root',  # root
-#          'PASSWORD': 'Xzhjc123',  # 密码
-#          'HOST': 'localhost',  # 数据库地址（默认为 localhost）
-#          'PORT': '3306',  # 数据库端口号（默认为 3306）
-#          'OPTIONS': {
-#              'charset': 'utf8mb4',
-#     }
-# }
-# }
-
+'''
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'vcat',  # 您的数据库名称
+        'USER': 'root',  # root #之后记得改成vcat
+        'PASSWORD': 'Deemoender47140222',  # 密码
+        'HOST': 'localhost',  # 数据库地址（默认为 localhost）
+        'PORT': '3306',  # 数据库端口号（默认为 3306）
+        'OPTIONS': {
+            'charset': 'utf8mb4',
+        }
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -140,3 +144,46 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+         'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}
+import datetime
+JWT_AUTH = {
+	#指明token的有效期
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(days=10),
+}
+
+CORS_ALLOW_CREDENTIALS =True
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:3000',
+    "http://localhost:8000",
+    "http://localhost:8080",
+    "http://localhost:8001",
+)
+CORS_ALLOW_METHODS = (
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+    'VIEW',
+)
+CORS_ALLOW_HEADERS = (
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+
+)
