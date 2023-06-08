@@ -163,15 +163,18 @@ SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 
 #CORS
 #凡是出现在白名单中的域名，都可以访问后端接口
-
+'''
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:8001',
     'http://127.0.0.1:8001',
     'http://192.168.1.101:8001',
 )
-
+'''
 #运行所有用户访问
-#CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_ALLOW_ALL = True
 
 #指明在跨域访问中，后端是否支持对cookie的操作
 CORS_ALLOW_CREDENTIALS = True
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
