@@ -18,8 +18,14 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import path,include,re_path
 
+from django.conf import settings
+from django.conf.urls.static import static
 from login.views import LoginView,index,LogoutView
 from pets.views import PetView
+
+
+
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     #re_path('user/login/$',LoginView.as_view()),
@@ -31,4 +37,4 @@ urlpatterns = [
     path('pets/', PetView.as_view(), name='pets'),
     path('',index,name='index')
     
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
