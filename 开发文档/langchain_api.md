@@ -54,5 +54,379 @@
           ]
       }
       ```
-   
-      
+
+### 2.2list_files
+
+1. GET:http://localhost:1002/api/local_doc_qa/list_files
+
+2. Body parameter
+
+   1. ```json
+      {"knowledge_base_id":"string"}
+      ```
+
+3. >Example responses
+   >
+   >200 Response
+   >
+   1. ```json
+      {
+          "code": 200,
+          "msg": "success",
+          "data": [
+              "kb1",
+              "kb2",
+              "kb3"
+          ]
+      }
+      ```
+### 2.2list_files
+
+1. GET:http://localhost:1002/api/local_doc_qa/list_files
+
+2. Body parameter
+
+   1. ```json
+      {"knowledge_base_id":"string"}
+      ```
+
+3. >Example responses
+   >
+   >200 Response
+   >
+   1. ```json
+      {
+          "code": 200,
+          "msg": "success",
+          "data": [
+              "kb1",
+              "kb2",
+              "kb3"
+          ]
+      }
+      ```
+### 2.2list_files
+
+1. GET:http://localhost:1002/api/local_doc_qa/list_files
+
+2. Body parameter
+
+   1. ```json
+      {"knowledge_base_id":"string"}
+      ```
+
+3. >Example responses
+   >
+   >200 Response
+   >
+   1. ```json
+      {
+          "code": 200,
+          "msg": "success",
+          "data": [
+              "kb1",
+              "kb2",
+              "kb3"
+          ]
+      }
+      ```
+### 2.2list_files
+
+1. GET:http://localhost:1002/api/local_doc_qa/list_files
+
+2. Body parameter
+
+   1. ```json
+      {"knowledge_base_id":"string"}
+      ```
+
+3. >Example responses
+   >
+   >200 Response
+   >
+   1. ```json
+      {
+          "code": 200,
+          "msg": "success",
+          "data": [
+              "kb1",
+              "kb2",
+              "kb3"
+          ]
+      }
+      ```
+### 2.2list_files
+
+1. GET:http://localhost:1002/api/local_doc_qa/list_files
+
+2. Body parameter
+
+   1. ```json
+      {"knowledge_base_id":"string"}
+      ```
+
+3. >Example responses
+   >
+   >200 Response
+   >
+   1. ```json
+      {
+          "code": 200,
+          "msg": "success",
+          "data": [
+              "kb1",
+              "kb2",
+              "kb3"
+          ]
+      }
+      ```
+### 2.2list_files
+
+1. GET:http://localhost:1002/api/local_doc_qa/list_files
+
+2. Body parameter
+
+   1. ```json
+      {"knowledge_base_id":"string"}
+      ```
+
+3. >Example responses
+   >
+   >200 Response
+   >
+   1. ```json
+      {
+          "code": 200,
+          "msg": "success",
+          "data": [
+              "kb1",
+              "kb2",
+              "kb3"
+          ]
+      }
+      ```
+### 2.2list_files
+
+1. GET:http://localhost:1002/api/local_doc_qa/list_files
+
+2. Body parameter
+
+   1. ```json
+      {"knowledge_base_id":"string"}
+      ```
+
+3. >Example responses
+   >
+   >200 Response
+   >
+   1. ```json
+      {
+          "code": 200,
+          "msg": "success",
+          "data": [
+              "kb1",
+              "kb2",
+              "kb3"
+          ]
+      }
+      ```
+### 2.2list_files
+
+1. GET:http://localhost:1002/api/local_doc_qa/list_files
+
+2. Body parameter
+
+   1. ```json
+      {"knowledge_base_id":"string"}
+      ```
+
+3. >Example responses
+   >
+   >200 Response
+   >
+   1. ```json
+      {
+          "code": 200,
+          "msg": "success",
+          "data": [
+              "kb1",
+              "kb2",
+              "kb3"
+          ]
+      }
+      ```
+### 2.2list_files
+
+1. GET:http://localhost:1002/api/local_doc_qa/list_files
+
+2. Body parameter
+
+   1. ```json
+      {"knowledge_base_id":"string"}
+      ```
+
+3. >Example responses
+   >
+   >200 Response
+   >
+   1. ```json
+      {
+          "code": 200,
+          "msg": "success",
+          "data": [
+              "kb1",
+              "kb2",
+              "kb3"
+          ]
+      }
+      ```
+### 2.2list_files
+
+1. GET:http://localhost:1002/api/local_doc_qa/list_files
+
+2. Body parameter
+
+   1. ```json
+      {"knowledge_base_id":"string"}
+      ```
+
+3. >Example responses
+   >
+   >200 Response
+   >
+   1. ```json
+      {
+          "code": 200,
+          "msg": "success",
+          "data": [
+              "kb1",
+              "kb2",
+              "kb3"
+          ]
+      }
+      ```
+### 2.2list_files
+
+1. GET:http://localhost:1002/api/local_doc_qa/list_files
+
+2. Body parameter
+
+   1. ```json
+      {"knowledge_base_id":"string"}
+      ```
+
+3. >Example responses
+   >
+   >200 Response
+   >
+   1. ```json
+      {
+          "code": 200,
+          "msg": "success",
+          "data": [
+              "kb1",
+              "kb2",
+              "kb3"
+          ]
+      }
+      ```
+### 2.2list_files
+
+1. GET:http://localhost:1002/api/local_doc_qa/list_files
+
+2. Body parameter
+
+   1. ```json
+      {"knowledge_base_id":"string"}
+      ```
+
+3. >Example responses
+   >
+   >200 Response
+   >
+   1. ```json
+      {
+          "code": 200,
+          "msg": "success",
+          "data": [
+              "kb1",
+              "kb2",
+              "kb3"
+          ]
+      }
+      ```
+### 2.2list_files
+
+1. GET:http://localhost:1002/api/local_doc_qa/list_files
+
+2. Body parameter
+
+   1. ```json
+      {"knowledge_base_id":"string"}
+      ```
+
+3. >Example responses
+   >
+   >200 Response
+   >
+   1. ```json
+      {
+          "code": 200,
+          "msg": "success",
+          "data": [
+              "kb1",
+              "kb2",
+              "kb3"
+          ]
+      }
+      ```
+### 2.2list_files
+
+1. GET:http://localhost:1002/api/local_doc_qa/list_files
+
+2. Body parameter
+
+   1. ```json
+      {"knowledge_base_id":"string"}
+      ```
+
+3. >Example responses
+   >
+   >200 Response
+   >
+   1. ```json
+      {
+          "code": 200,
+          "msg": "success",
+          "data": [
+              "kb1",
+              "kb2",
+              "kb3"
+          ]
+      }
+      ```
+### 2.2list_files
+
+1. GET:http://localhost:1002/api/local_doc_qa/list_files
+
+2. Body parameter
+
+   1. ```json
+      {"knowledge_base_id":"string"}
+      ```
+
+3. >Example responses
+   >
+   >200 Response
+   >
+   1. ```json
+      {
+          "code": 200,
+          "msg": "success",
+          "data": [
+              "kb1",
+              "kb2",
+              "kb3"
+          ]
+      }
+      ```
