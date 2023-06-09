@@ -1,0 +1,107 @@
+@charset "UTF-8";
+/* 页面背景颜色 */
+body {
+    background-color: #f5f5f5;
+  }
+
+  /* 页面标题 */
+  h1 {
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+  
+  /* 表单外框 */
+  .form-box {
+    margin: 50px auto;
+    padding: 20px;
+    width: 400px;
+    box-shadow: 0px 2px 14px rgba(58, 57, 68, 0.2);
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 5px;
+    text-align: center;
+   /* background-image:url("./cat7.jpg");*/
+  }
+  
+  .form-box:hover {
+    cursor: pointer;
+    border-color: #4078c0;
+    box-shadow: 0px 2px 14px #4078c0;
+  }
+  
+  .form-box::before {
+    /*
+    content: url("./cat64.png");
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    */
+    position: absolute;
+    left: 0;
+    top: 1rem;
+    display: block;
+    height: 4rem;
+    width: 100%;
+    background-image: url("../../imgs/cat67.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    --tw-content: '';
+    content: var(--tw-content);
+  }
+
+
+
+  /* 表单元素样式 */
+  input[type="text"], input[type="password"] {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 80%;
+    border: none;
+    border-bottom: 2px solid #eaeaea;
+    font-size: 16px;
+    transition: all .3s ease-in-out;
+  }
+  
+  input[type="text"]:focus, input[type="password"]:focus {
+    outline: none;
+    border-bottom: 2px solid #4078c0;
+  }
+  
+  /* 登录按钮 */
+  input[type="submit"] {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4078c0;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all .3s ease-in-out;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #375e9a;
+  }
+  
+  /* 注册提示 */
+  p {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  a {
+    color: #4078c0;
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+  }
+  
+  a:hover {
+    color: #375e9a;
+  }
