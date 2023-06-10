@@ -1,0 +1,5 @@
+".\Objects\main.obj",
+".\Objects\lcd_init.obj",
+".\Objects\lcd.obj" 
+TO ".\Objects\YXDZ" 
+PRINT(".\Listings\YXDZ.m51") RAMSIZE(256) 

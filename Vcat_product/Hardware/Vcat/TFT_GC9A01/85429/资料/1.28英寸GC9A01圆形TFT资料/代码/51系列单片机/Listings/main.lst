@@ -1,0 +1,42 @@
+C51 COMPILER V9.59.0.0   MAIN                                                              07/26/2022 11:58:31 PAGE 1   
+
+
+C51 COMPILER V9.59.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: G:\MDK\C51\BIN\C51.EXE main.c LARGE OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\ma
+                    -in.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include "reg51.h"
+   2          #include "lcd_init.h"
+   3          #include "lcd.h"
+   4          #include "image.h"
+   5          
+   6          
+   7          int main(void)
+   8          {
+   9   1        LCD_Init();//LCD≥ı ºªØ
+  10   1        LCD_Fill(0,0,LCD_W,LCD_H,WHITE);
+  11   1        while(1)
+  12   1        {
+  13   2          LCD_ShowPicture(62,62,115,115,YXDZ_logo);
+  14   2        }
+  15   1      }
+  16          
+  17          
+  18          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     68    ----
+   CONSTANT SIZE    =  26450    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
