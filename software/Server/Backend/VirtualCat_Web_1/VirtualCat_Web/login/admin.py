@@ -16,7 +16,7 @@ class EmailAdmin(admin.ModelAdmin):
     list_display=['uid','email']
 
 class UserInfoAdmin(admin.ModelAdmin):
-    list_display=['uname','pwd','nickname','gender','birth','date','photo']
+    list_display=['uname','pwd','nickname','gender','birth','date','avatar']
 
 admin.site.register(Account,AccountAdmin)
 admin.site.register(Email,EmailAdmin)

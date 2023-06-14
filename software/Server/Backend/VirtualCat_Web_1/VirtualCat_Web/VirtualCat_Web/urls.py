@@ -20,7 +20,7 @@ from django.urls import path,include,re_path
 
 from django.conf import settings
 from django.conf.urls.static import static
-from login.views import LoginView,index,LogoutView
+from login.views import LoginView,index,LogoutView,RegisterView,RegistUserInfoView
 from pets.views import PetView
 
 
@@ -34,6 +34,8 @@ urlpatterns = [
     #path('login/',LoginView.as_view),
     path('login/', LoginView.as_view(), name='login'),
     path('logout/', LogoutView.as_view(), name='logout'),
+    path("register/", RegisterView.as_view(), name="register"),
+    path("register/userInfo",RegistUserInfoView.as_view(), name='regist userinfo'),
     path('pets/', PetView.as_view(), name='pets'),
     path('',index,name='index')
     
