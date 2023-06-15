@@ -6,7 +6,7 @@ import axios from 'axios';
 const glmApi = axios.create({
   baseURL: 'http://59.110.7.219:1002',
   //axios 发送跨域请求时，自动携带cookie信息
-  withCredentials: true,
+  withCredentials: false,
 });
 
 const serverApi = axios.create({
