@@ -4,8 +4,8 @@ from django.db import models
 # Create your models here.
 
 class Account(models.Model):
-    uid = models.IntegerField(primary_key=True,verbose_name='用户ID',default=0)
-    uname = models.CharField(max_length=30,verbose_name='用户名',default='')
+    uid = models.AutoField(primary_key=True,verbose_name='用户ID')
+    uname = models.CharField(max_length=30,verbose_name='用户名')
     class Meta:
         #默认生成的表名：
         db_table = 'account'
@@ -18,7 +18,7 @@ class Account(models.Model):
 
 
 class Email(models.Model):
-    uid = models.IntegerField(primary_key=True,verbose_name='用户ID')
+    uid = models.AutoField(primary_key=True,verbose_name='用户ID')
     email = models.EmailField(max_length=30,verbose_name='邮箱')
     class Meta:
         #默认生成的表名：
@@ -36,14 +36,14 @@ class UserInfo(models.Model):
     uname = models.CharField(max_length=30,verbose_name='用户名')
     pwd = models.CharField(max_length=24,verbose_name='密码')
     nickname = models.CharField(max_length=30, verbose_name='昵称', blank=True)
-    gender  = models.BooleanField(verbose_name='性别',null=True)
+    gender  = models.CharField(max_length=30, verbose_name='性别',null=True)
     birth = models.DateField(verbose_name='出生日期',null=True)
     date = models.DateField(verbose_name='注册日期',null=False)
-    photo = models.ImageField(verbose_name='用户头像',null=True)
-    def save(self, *args, **kwargs):
-        if not self.nickname:
-            self.nickname = self.uname
-            super().save(*args, **kwargs)
+    avatar = models.TextField(verbose_name='用户头像',null=True)
+    #def save(self, *args, **kwargs):
+        #if not self.nickname:
+            #self.nickname = self.uname
+            #super().save(*args, **kwargs)
 
 
     class Meta:

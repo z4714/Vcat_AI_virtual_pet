@@ -3,9 +3,23 @@ from .models import Account, Email, UserInfo
 from django.http import JsonResponse
 from django.views import View
 import json
-from rest_framework_simplejwt.views import TokenObtainPairView
+#from rest_framework_simplejwt.views import TokenObtainPairView
 from django.contrib.auth import authenticate, login, logout
+import smtplib #用于邮件的发信动作
+from email.mime.text import MIMEText #用于构建邮件内容
+from email.header import Header #用于构建邮件头
+from django.db import IntegrityError
+import random
+from datetime import date
 
+
+#发信服务器
+smtp_server = 'smtp.qq.com'
+#发信方的信息：发信邮箱，授权码
+from_addr = '1712968536@qq.com'
+stmpcode = 'xculhadcpahkdjij'
+#收信方邮箱
+to_addr = ''
 
 # 登录接口定义视图
 class LoginView(View):
@@ -38,7 +52,7 @@ class LoginView(View):
                             'gender':user_info.gender,
                             'birth':user_info.birth,
                             'date':user_info.date,
-                            'photo':user_info.photo.url if user_info.photo else None,
+                            'avatar':user_info.avatar if user_info.avatar else None,
                         }
                     })
                 else:
@@ -70,7 +84,7 @@ class LoginView(View):
                             'gender':corr_pwd.gender,
                             'birth':corr_pwd.birth,
                             'date':corr_pwd.date,
-                            'photo':corr_pwd.photo.url if corr_pwd.photo else None,
+                            'avatar':corr_pwd.avatar if corr_pwd.avatar else None,
                         }
                     })
             elif corr_username:
@@ -86,17 +100,17 @@ class LoginView(View):
                         'message': "登录成功",
                          'UserInfo': {
                             'uid':corr_username.uid,
-                            'username': corr_pwd.uname,
+                            'username': corr_pwd.uname,#account
                             'email': corr_email.email,
                             'nickname':corr_pwd.nickname,
                             'gender':corr_pwd.gender,
                             'birth':corr_pwd.birth,
                             'date':corr_pwd.date,
-                            'photo':corr_pwd.photo.url if corr_pwd.photo else None,
+                            'avatar':corr_pwd.avatar if corr_pwd.avatar else None,
                         }
                     })
 
-            return JsonResponse({'code': 400, 'message': "登录失败"}, status=400)
+            return JsonResponse({'code': 400, 'message': "登录失败,没找到用户信息"}, status=400)
 
 
 class LogoutView(View):
@@ -105,6 +119,80 @@ class LogoutView(View):
         logout(request)
         return JsonResponse({'code': 200, 'message': "已注销用户登录"})
 
+class RegisterView(View):
+
+    def post(self,request):
+        
+        params = request.POST if len(request.POST) else json.loads(request.body.decode())
+
+        if(params.get('email')):
+            email = params.get('email') 
+            email_exist = Email.objects.filter(email=email).first()
+            if email_exist:
+                return JsonResponse({'code': 400, 'message': "邮箱已被注册"})
+
+            
+            to_addr = email
+            print(email+"\n")
+            #生成验证码 
+            rand_captcha = random.randint(100000, 999999)
+            request.session['rand_captcha'] = rand_captcha
+
+            #邮箱正文内容，第一个参数为内容，第二个为格式（plain：纯文本），第三编码
+            msg = MIMEText(f'Vcat注册验证码:{rand_captcha}','plain','utf-8')
+            #邮件头
+            msg['From']=Header(from_addr)
+            msg['To']=Header(to_addr)
+            server = smtplib.SMTP_SSL(host='smtp.qq.com')
+            server.connect(host='smtp.qq.com',port=465)
+            server.login(from_addr, stmpcode)
+            server.sendmail(from_addr, to_addr, msg.as_string())
+            server.quit()
+            return JsonResponse({'code': 200, 'message': "已发送验证码到邮箱"})
+        elif params.get('captcha'):
+            
+            user_captcha = params.get('captcha')
+            rand_captcha = request.session.get('rand_captcha')
+            print(str(user_captcha) + "\n" + str(rand_captcha) + "\n")
+            if rand_captcha and user_captcha == str(rand_captcha):
+                # 验证码匹配，邮箱可用
+                return JsonResponse({'code': 200, 'message': "邮箱验证通过"})
+            else:
+                return JsonResponse({'code': 400, 'message': "验证码错误"})
+        
+        return JsonResponse({'code': 400, 'message': "请求参数错误"})
+
+
+class RegistUserInfoView(View):
+    def post(self,request):
+        #此接口默认对应网页端的注册行为，所以默认account使用的都是email
+        #（默认用户都用email进行注册）
+        params = request.POST if len(request.POST) else json.loads(request.body.decode())
+        account = params.get('account')
+        print(account)
+        if not account:
+            return JsonResponse({'code': 400, 'message': "账号不能为空"})
+        try:
+            ruser_info = UserInfo(
+                uname=account,
+                pwd = params.get('password'),
+                nickname = params.get('nickname'),
+                gender = params.get('gender'),
+                birth = params.get('birth'),
+                date = date.today(),
+                avatar = params.get('avatar')
+            )
+            ruser_info.save()#录入注册信息
+        
+            remail = Email( email=params.get('account'))
+            remail.save() #对应邮箱信息到uid
+
+            raccount =Account(uname = params.get('account'))
+            raccount.save()#对应账户信息到uid
+
+            return JsonResponse({'code': 200, 'message': "用户注册成功"})
+        except IntegrityError as e:
+                        return JsonResponse({'code': 400, 'message': "保存数据失败: " + str(e)})
 
 def index(request):
     print("进入 index")

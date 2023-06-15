@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Insert title here</title>
+    <link href="./styles.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-inner">
+        <div class="header-left">
+        &nbsp;&nbsp;&nbsp
+          <div class="header-logo"></div>
+          <a>ServerShop</a>
+        </div>
+        <div class="header-nav">
+          <a class="header-nav-link" href="page2.html">商品展示</a>
+          <a class="header-nav-link" href="loginSuccess.jsp">用户信息</a>
+          <a class="header-nav-link" href="showGoodsByPage.jsp">商品后台</a>
+         
+
+        </div>
+        
+          
+          <div class="header-nav">
+
+            <div class="header-nav-mine-icon"></div>
+            
+            <a class="header-nav-mine" href="#">Mine</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </div>
+        
+      
+      </div>
+    </header>
+    <script>
+      // 为当前页面对应的导航链接添加选中效果
+      const currentPage = window.location.pathname.split('/').pop();
+      const navLinks = document.querySelectorAll('.header-nav-link');
+      navLinks.forEach(link => {
+        if (link.href.split('/').pop() === currentPage) {
+          link.classList.add('active');
+        }
+      });
+    </script>
+  </body>
+</html>
