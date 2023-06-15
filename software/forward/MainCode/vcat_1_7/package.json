@@ -1,0 +1,37 @@
+{
+  "private": true,
+  "author": "z4714 <1712968536@qq.com>",
+  "scripts": {
+    "dev": "max dev",
+    "build": "max build",
+    "format": "prettier --cache --write .",
+    "prepare": "husky install",
+    "postinstall": "max setup",
+    "setup": "max setup",
+    "start": "set PORT=8001"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^5.1.4",
+    "@ant-design/pro-components": "^2.5.5",
+    "@ant-design/pro-layout": "^7.14.3",
+    "@umijs/max": "^4.0.70",
+    "antd": "^5.5.2",
+    "axios": "^1.4.0",
+    "classnames": "^2.3.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "http-proxy-middleware": "^2.0.6",
+    "react-chat-widget": "^3.1.4",
+    "react-router-dom": "^6.12.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.8",
+    "@types/react-dom": "^18.2.4",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
+    "prettier": "^2.8.8",
+    "prettier-plugin-organize-imports": "^3.2.2",
+    "prettier-plugin-packagejson": "^2.4.3",
+    "typescript": "^5.1.3"
+  }
+}
