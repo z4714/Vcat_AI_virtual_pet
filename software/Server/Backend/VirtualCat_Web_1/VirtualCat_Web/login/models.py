@@ -5,7 +5,7 @@ from django.db import models
 
 class Account(models.Model):
     uid = models.AutoField(primary_key=True,verbose_name='用户ID')
-    uname = models.CharField(max_length=30,verbose_name='用户名',default='')
+    uname = models.CharField(max_length=30,verbose_name='用户名')
     class Meta:
         #默认生成的表名：
         db_table = 'account'

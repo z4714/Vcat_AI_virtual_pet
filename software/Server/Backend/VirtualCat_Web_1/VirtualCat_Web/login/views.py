@@ -3,7 +3,7 @@ from .models import Account, Email, UserInfo
 from django.http import JsonResponse
 from django.views import View
 import json
-from rest_framework_simplejwt.views import TokenObtainPairView
+#from rest_framework_simplejwt.views import TokenObtainPairView
 from django.contrib.auth import authenticate, login, logout
 import smtplib #用于邮件的发信动作
 from email.mime.text import MIMEText #用于构建邮件内容
