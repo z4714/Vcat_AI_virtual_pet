@@ -14,12 +14,15 @@ class PetsInfo(models.Model):
     pet_type = models.CharField(max_length=254,verbose_name='宠物类型')
     gender = models.CharField(max_length=12,verbose_name='宠物性别',blank=True)
     
+    description = models.CharField(max_length=254,verbose_name='宠物描述',blank=True)
     level = models.IntegerField(verbose_name='等级', default=0)
     exp  = models.IntegerField(verbose_name='经验值',default=0)
-    uid = models.ForeignKey(Account,default=0,on_delete=models.SET_DEFAULT)
+    #uid = models.ForeignKey(Account, default=0, on_delete=models.SET_DEFAULT, to_field='uid')
+    uid = models.IntegerField(default=0)
     date = models.DateField(verbose_name='生成日期')
     mode_type = models.CharField(max_length=254,verbose_name='模型类型',blank=True)
-    p_avatar =models.TextField(verbose_name='宠物图像',null=True)
+    #p_avatar =models.FileField(verbose_name='宠物图像',null=True)
+    p_avatar = models.TextField(verbose_name='宠物图像', null=True)
 
     class Meta:
         #默认生成的表名：

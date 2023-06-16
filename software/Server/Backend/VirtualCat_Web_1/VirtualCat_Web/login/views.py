@@ -40,9 +40,10 @@ class LoginView(View):
                 # 进一步处理密码验证逻辑
 
                 if password == corr_id.password:
-                    request.session['user_id'] = corr_id.uid
+                    request.session['uid'] = corr_id.uid
                     user_info = UserInfo.objects.get(uname=corr_id.uname)
                     email = Email.objects.get(uid=corr_id.uid)
+                    
                     return JsonResponse({'code': 200, 'message': "登录成功",
                         'UserInfo': {
                             'uid':email.uid,
@@ -72,7 +73,7 @@ class LoginView(View):
                 corr_pwd = UserInfo.objects.filter(uname=username).first()
                 if password == corr_pwd.pwd:
                     # 登录成功，将用户信息存储到会话中
-                    request.session['user_id'] = corr_email.uid
+                    request.session['uid'] = corr_email.uid
                     return JsonResponse({
                         'code': 200,
                         'message': "登录成功",
@@ -94,7 +95,7 @@ class LoginView(View):
                 corr_email = Email.objects.filter(uid=corr_username.uid).first()
                 if password == corr_pwd.pwd:
                     # 登录成功，将用户信息存储到会话中
-                    request.session['user_id'] = corr_username.uid
+                    request.session['uid'] = corr_username.uid
                     return JsonResponse({
                         'code': 200,
                         'message': "登录成功",
@@ -117,6 +118,7 @@ class LogoutView(View):
     # 退出登录
     def get(self, request):
         logout(request)
+        request.session['uid'] = 0
         return JsonResponse({'code': 200, 'message': "已注销用户登录"})
 
 class RegisterView(View):
