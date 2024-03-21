@@ -2,8 +2,8 @@
 WiFi.mode(WIFI_STA);
 
 // Replace with your network credentials
-const char* ssid = "ahaNoFace";
-const char* password = "deemoender47140222";
+const char* ssid = "";
+const char* password = "";
 WiFiServer server(80);
 WiFiClient client1;
 
