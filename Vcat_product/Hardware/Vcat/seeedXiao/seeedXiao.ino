@@ -10,9 +10,9 @@
 DHT dht(DHTPIN, DHTTYPE);
 
 /* 设备的三元组信息*/
-#define PRODUCT_KEY       "ifpbejqG726"     
+#define PRODUCT_KEY       ""     
 #define DEVICE_NAME       "XIAO_ESP32C3"       //设备名
-#define DEVICE_SECRET     "ef710ff2b76682f28df0e6e98679bb22"
+#define DEVICE_SECRET     ""
 #define REGION_ID         "cn-shanghai"   //看你选择在哪个地方
 
 /* 线上环境域名和端口号，不需要改 */
@@ -20,15 +20,15 @@ DHT dht(DHTPIN, DHTTYPE);
 #define MQTT_PORT         1883
 #define MQTT_USRNAME      "XIAO_ESP32C3&ifpbejqG726"
 
-#define CLIENT_ID         "ifpbejqG726.XIAO_ESP32C3|securemode=2,signmethod=hmacsha256,timestamp=1685328909683|"
-#define MQTT_PASSWD       "eb863cfd2776b4c57afe3e7e89dd4da86c10f53b715293672d1332ce2e78243f"
+#define CLIENT_ID         ""
+#define MQTT_PASSWD       ""
 
 #define ALINK_BODY_FORMAT         "{\"id\":\"XIAO_ESP32C3\",\"version\":\"1.0\",\"method\":\"thing.event.property.post\",\"params\":%s}\r"    //dht11是设备名，换成你的就可以
 #define ALINK_TOPIC_PROP_POST     "/sys/" PRODUCT_KEY "/" DEVICE_NAME "/thing/event/property/post"
 
 
-const char* ssid     = "ahaNoFace";
-const char* password = "deemoender47140222";   
+const char* ssid     = "";
+const char* password = "";   
 
 const int buttonPin = 6;     // the number of the pushbutton pin
 const int ledPin =  13;      // the number of the LED pin
